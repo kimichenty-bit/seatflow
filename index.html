@@ -1038,7 +1038,7 @@ function ScenarioBuilder({scenarios,setScenarios,activeScId,setActiveScId,showTo
           <div className="stitle">情境模擬工作台</div>
           <div className="ssub">
             {isLocked?<span style={{color:'#d97706'}}>🔒 已鎖定（唯讀）— 點解鎖後才能編輯</span>
-              :'拖曳左側團隊到右側辦公室，設定挪移人數與月份'}
+              :<span>① 選/建立情境　② 拖曳團隊到目標辦公室　③ 設定人數與月份</span>}
           </div>
         </div>
         <div style={{display:'flex',gap:8,flexWrap:'wrap',alignItems:'center'}}>
@@ -1158,9 +1158,7 @@ function ScenarioBuilder({scenarios,setScenarios,activeScId,setActiveScId,showTo
       <div style={{display:'flex',gap:12,alignItems:'flex-start',minHeight:320}}>
         {/* LEFT */}
         <div style={{width:200,flexShrink:0,maxHeight:'68vh',overflowY:'auto'}}>
-          <div style={{padding:'7px 10px',background:'#eff6ff',borderRadius:8,border:'1px solid #bfdbfe',marginBottom:10,fontSize:10,color:'#1e40af',lineHeight:1.8}}>
-            1. 選/建立情境<br/>2. 拖曳團隊到目標辦公室<br/>3. 設定人數與月份
-          </div>
+  
           {offices.map(o=>{
             const offTeams=teams.filter(t=>t.office===o.id&&(t.seats[viewMonth]||0)>0);
             if(!offTeams.length)return null;
