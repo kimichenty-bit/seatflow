@@ -661,7 +661,7 @@ function Dashboard({moves,activeScenario,liveOffices,liveMonths,liveTeams}){
                               boxShadow:isSel?'0 0 0 3px #bfdbfe':'none'}}>
                             <div style={{fontSize:12,fontWeight:700,color:isSel?'#fff':c.txt,lineHeight:1.2}}>{actual>0?actual:'—'}</div>
                             {actual>0&&<div style={{fontSize:9,color:isSel?'rgba(255,255,255,.75)':c.txt,opacity:.8,marginTop:1}}>{p}%</div>}
-                            {p>=95&&!isSel&&<div style={{position:'absolute',top:-5,left:'50%',transform:'translateX(-50%)',fontSize:9,background:'#ef4444',color:'#fff',borderRadius:3,padding:'1px 4px',whiteSpace:'nowrap'}}>⚠超載</div>}
+                            {p>100&&!isSel&&<div style={{position:'absolute',top:-5,left:'50%',transform:'translateX(-50%)',fontSize:9,background:'#ef4444',color:'#fff',borderRadius:3,padding:'1px 4px',whiteSpace:'nowrap'}}>⚠超載</div>}
                             {changed&&<div style={{position:'absolute',top:-4,right:-4,width:7,height:7,borderRadius:'50%',background:'#f59e0b',border:'2px solid #fff'}}/>}
                           </div>
                         </td>
